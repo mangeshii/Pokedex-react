@@ -1,5 +1,5 @@
 import Search from "./Components/Search";
-import Card from "./Components/Cards"
+import Pokedex from "./Components/Pokedex"
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <div className="main-container">
         <Search/>
-        <Card/>
+        <Pokedex/>
       </div>
     </div>
   );

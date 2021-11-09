@@ -1,7 +1,7 @@
-import "./Cards.css";
+import "./Pokedex.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-const Cards = () => {
+const Pokedex = () => {
     return (
         <>
             <div class="containers">
@@ -36,4 +36,4 @@ const Cards = () => {
     );
 };
 
-export default Cards;
+export default Pokedex;
