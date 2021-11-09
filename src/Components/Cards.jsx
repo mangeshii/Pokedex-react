@@ -1,0 +1,39 @@
+import "./Cards.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+const Cards = () => {
+    return (
+        <>
+            <div class="containers">
+                <div class="row row-cols-2 row-cols-lg-4 g-2 g-lg-3">
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 border bg-light">Row column</div>
+                    </div>
+                </div>
+            </div>
+        </>
+    );
+};
+
+export default Cards;

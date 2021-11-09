@@ -14,12 +14,10 @@ code {
 
 .App {
     height: 100vh;
-    border: 2px solid red;
     width:100%
 }
 .main-container {
     max-width: 1400px;
-    border: 2px solid blue;
     margin: auto;
     height:100%;
     padding: 2rem;
