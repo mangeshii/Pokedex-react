@@ -1,26 +1,26 @@
 .containers {
     margin-top: 4rem;
 }
-.thumbnail{
-    height:8rem !important
+.thumbnail {
+    height: 8rem !important;
 }
-.cols{
+.cols {
     display: flex;
     justify-content: center;
     text-align: center;
     align-items: center;
     flex-direction: column;
-
+    background-color: #f2f3f4;
 }
-.name-cont{
-    width:100%;
+.name-cont {
+    width: 100%;
     background-color: white;
-    padding:0;
-    margin:0;
-    height:fit-content
-
+    padding: 0;
+    margin: 0;
+    height: fit-content;
 }
-.name,.id{
-    margin:0;
+.name,
+.id {
+    margin: 0;
     padding: 0;
 }

@@ -5,14 +5,17 @@ import ThumbNail from "./Pokemon-thumbnail";
 
 const Pokedex = () => {
     const [pokemonData, setPokemonData] = useState([]);
+    const [loadMore, setLoadMore] = useState(
+        "https://pokeapi.co/api/v2/pokemon?limit=12"
+    );
     console.log(pokemonData);
 
     const fetchApi = async () => {
         try {
-            const response = await fetch(
-                "https://pokeapi.co/api/v2/pokemon?limit=16"
-            );
+            const response = await fetch(loadMore);
             const data = await response.json();
+
+            setLoadMore(data.next);
 
             const createPokemonObject = (result) => {
                 result.forEach(async (pokemon) => {
@@ -52,8 +55,8 @@ const Pokedex = () => {
                         );
                     })}
                 </div>
+                <button onClick={() => fetchApi()}>Load More</button>
             </div>
-
         </>
     );
 };
