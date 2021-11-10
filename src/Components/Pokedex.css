@@ -1,3 +1,26 @@
 .containers {
     margin-top: 4rem;
 }
+.thumbnail{
+    height:8rem !important
+}
+.cols{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.name-cont{
+    width:100%;
+    background-color: white;
+    padding:0;
+    margin:0;
+    height:fit-content
+
+}
+.name,.id{
+    margin:0;
+    padding: 0;
+}

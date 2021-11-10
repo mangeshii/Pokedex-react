@@ -10,7 +10,7 @@ const Pokedex = () => {
     const fetchApi = async () => {
         try {
             const response = await fetch(
-                "https://pokeapi.co/api/v2/pokemon?limit=17"
+                "https://pokeapi.co/api/v2/pokemon?limit=16"
             );
             const data = await response.json();
 
@@ -38,24 +38,22 @@ const Pokedex = () => {
         <>
             <div className="containers">
                 <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
-                <ThumbNail pokemonData={pokemonData}/>
-                    {/* {pokemonData.map((pokemon) => {
+                    {pokemonData.map((pokemon, index) => {
                         return (
-                            <div className="col ">
-                                <div className="p-3 border bg-light">
-                                    <img
-                                        src={
-                                            pokemon.sprites.other.dream_world
-                                                .front_default
-                                        }
-                                        alt="img"
-                                    ></img>
-                                </div>
-                            </div>
+                            <ThumbNail
+                                id={pokemon.id}
+                                name={pokemon.name}
+                                image={
+                                    pokemon.sprites.other.dream_world
+                                        .front_default
+                                }
+                                key={index}
+                            />
                         );
-                    })} */}
+                    })}
                 </div>
             </div>
+
         </>
     );
 };
