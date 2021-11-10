@@ -55,7 +55,11 @@ const Pokedex = () => {
                         );
                     })}
                 </div>
-                <button onClick={() => fetchApi()}>Load More</button>
+            </div>
+            <div className="btn">
+                <button className="load-more" onClick={() => fetchApi()}>
+                    Load More
+                </button>
             </div>
         </>
     );

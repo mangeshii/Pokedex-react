@@ -1,5 +1,5 @@
 .containers {
-    margin-top: 4rem;
+    margin: 2rem 0;
 }
 .thumbnail {
     height: 8rem !important;
@@ -23,4 +23,16 @@
 .id {
     margin: 0;
     padding: 0;
+}
+
+.btn{
+    border:2px solid red;
+    width:100%;
+    margin-bottom: 4rem;
+}
+.load-more{
+    border:none;
+    height:3rem;
+    width:10rem;
+    border-radius: 10px;
 }
