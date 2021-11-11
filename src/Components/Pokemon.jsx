@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import "./Pokemon.css";
 
 const Pokemon = (props) => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
+    console.log(pokemonInfo);
     const pokemonid = useParams();
     const { id } = pokemonid;
 
@@ -27,77 +29,61 @@ const Pokemon = (props) => {
     return (
         <>
             <div className="pokemon-container">
-
+                <div className="cont">
+                    <div className="image-cont">
+                        <img
+                            className="pokemon-img"
+                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
+                            alt="pokemon"
+                        />
+                    </div>
+                    <div className="poke-details">
+                        <div className="nameandid">
+                            <h1>{`${name}`}</h1>
+                            <h1>{`#0${pokemonInfo.id}`}</h1>
+                        </div>
+                        <div className="height-weight">
+                            <div className="height">
+                                <h1>height</h1>
+                                <h1>{`${height}`}</h1>
+                            </div>
+                            <div className="weight">
+                                <h1>weight</h1>
+                                <h1>{`${weight}`}</h1>
+                            </div>
+                        </div>
+                        <div className="type-abilities">
+                            <div className="type">
+                                <h1>Type:</h1>
+                                {typeof types !== "undefined" ? (
+                                    types.map((info) => {
+                                        const { type } = info;
+                                        const { name } = type;
+                                        return <h1>{`${name}`}</h1>;
+                                    })
+                                ) : (
+                                    <p>failed</p>
+                                )}
+                            </div>
+                            <div className="ability">
+                                <h1>ability:</h1>
+                                {typeof abilities !== "undefined" ? (
+                                    abilities.map((info) => {
+                                        const { ability } = info;
+                                        const { name } = ability;
+                                        return <h1>{` ${name}`}</h1>;
+                                    })
+                                ) : (
+                                    <p>failed</p>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -20,6 +20,7 @@ code {
     max-width: 1400px;
     margin: auto;
     height:100%;
-    padding: 2rem;
+    width:100vw
+    /* padding: 2rem; */
 
 }
