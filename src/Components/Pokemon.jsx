@@ -24,11 +24,17 @@ const Pokemon = (props) => {
         PokemonDetails();
     }, [id]);
 
-    // const firstCharUpperCase = (namee) => {
-    //     return namee.charAt(0).toUpperCase() + namee.slice(1)
-    // };
 
     const { name, height, weight, types, abilities, stats } = pokemonInfo;
+
+    //covert decimeter to feet and meter
+    const poke_height_ft = (height * 0.328083).toFixed(1);
+    const new_poke_height = poke_height_ft.split(".").join("'");
+    const poke_height_m = height * 0.1;
+
+    // convert hectograms to kg and lbs
+    const poke_weight_kg = (weight / 10).toFixed(0)
+    const poke_weight_lbs =(weight * 0.22046 ).toFixed(1)
 
     return (
         <>
@@ -50,11 +56,11 @@ const Pokemon = (props) => {
                             <div className="height-weight">
                                 <div className="height">
                                     <h4>Height</h4>
-                                    <h4 className="value">{`${height}`}</h4>
+                                    <h5 className="value">{`${new_poke_height}"  (${poke_height_m}m)`}</h5>
                                 </div>
                                 <div className="weight">
                                     <h4>Weight</h4>
-                                    <h4>{`${weight}`}</h4>
+                                    <h5>{` ${poke_weight_lbs}lbs (${poke_weight_kg}kg )` }</h5>
                                 </div>
                             </div>
                             <div className="type-ability">
@@ -64,7 +70,7 @@ const Pokemon = (props) => {
                                         types.map((info) => {
                                             const { type } = info;
                                             const { name } = type;
-                                            return <h4>{`${name}`}</h4>;
+                                            return <h5>{`${name}`}</h5>;
                                         })
                                     ) : (
                                         <p>failed</p>
@@ -78,7 +84,7 @@ const Pokemon = (props) => {
                                             const { ability } = info;
                                             const { name } = ability;
                                             return (
-                                                <h4 className="abi">{` ${name}`}</h4>
+                                                <h5 className="abi">{` ${name}`}</h5>
                                             );
                                         })
                                     ) : (
@@ -101,11 +107,14 @@ const Pokemon = (props) => {
                                     console.log(name);
                                     return (
                                         <>
-                                        <div className="value">
-
-                                            <h4 className="names">{name}</h4>
-                                            <h4 className="val">{base_stat}</h4>
-                                        </div>
+                                            <div className="value">
+                                                <h4 className="names">
+                                                    {name}
+                                                </h4>
+                                                <h4 className="val">
+                                                    {base_stat}
+                                                </h4>
+                                            </div>
                                         </>
                                     );
                                 })}

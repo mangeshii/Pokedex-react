@@ -23,6 +23,7 @@
     margin-right: 3rem;
     font-weight: 600;
     font-size: 3.5rem;
+
 }
 .id {
     font-weight: 300;
@@ -37,21 +38,23 @@
 .ability {
     height: 50%;
 }
-.height h4,
-.weight h4,
-.type h4,
-.ability h4 {
+.rows h4 {
     margin: 0;
     font-weight: 400;
-}
-.weight h4 {
-    margin: 0;
+    color:#708090;
+    margin-bottom: .5rem;;
+    /* border:2px solid red */
 }
 .rows {
     height: 100%;
     width: 100%;
     display: flex;
     padding: 3rem 0;
+}
+.rows h5{
+    color:#576d7a;
+    font-weight: 300;
+    margin:0
 }
 .height-weight,
 .type-ability {
@@ -70,7 +73,6 @@
     padding: 2rem 5rem;
 }
 .stats-name{
-    /* border:2px solid rgb(161, 157, 157); */
     padding: 0.8rem 0;
     width:35%
 }
@@ -82,10 +84,5 @@
     display: flex;
 }
 .names{
-    /* border:2px solid red; */
     width:85%
-}
-.val{
-    /* border:2px solid blue */
-
 }
