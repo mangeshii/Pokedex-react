@@ -9,9 +9,6 @@
 .cont {
     display: flex;
 }
-.pokemon-img {
-    height: 16rem;
-}
 .image-cont {
     display: inline-block;
     padding: 7rem 5rem;
@@ -36,7 +33,7 @@
 
 .height,
 .weight,
-.type,
+.types,
 .ability {
     height: 50%;
 }
@@ -81,7 +78,7 @@
     margin: 0;
     padding: 0.6rem 0;
 }
-.value {
+.values {
     display: flex;
 }
 .names {
@@ -101,24 +98,110 @@ h5 {
     display: none;
 }
 @media only screen and (max-width: 900px) {
+    .pokemon-container {
+        background-color: transparent;
+    }
     .cont {
         flex-direction: column;
     }
-    .image-cont {
-        border: 2px solid red;
-        width: 100vw;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .wrapper {
+
+    .progress-bar-wrapper {
         display: none;
     }
-    .poke-details-container {
-        border: 2px solid blueviolet;
-        width: 100%;
+    .rows {
+        display: none;
     }
     .tabs {
         display: block;
+        border-radius: 3rem;
+        background-color: white;
+        margin-top: -3rem;
+        height: 100%;
+    }
+    .tab-box {
+        padding: 7rem 0;
+    }
+    .image-cont {
+        height: 50vh;
+        width: 100%;
+        padding: 0;
+        background-color: beige;
+        margin: auto;
+        display: inline-block;
+    }
+    .pokemon-img {
+        width: 100%;
+        position: relative;
+        top: 55%;
+        z-index: 1;
+        margin: auto;
+        height: 15rem;
+    }
+    .height,
+    .weight,
+    .ability {
+        display: flex;
+    }
+    .height h4,
+    .weight h4,
+    .ability h4 {
+        margin: 1rem;
+        width: 15%;
+        color: #708090;
+        font-weight: 500 !important;
+    }
+
+    .value {
+        margin: 1.4rem;
+    }
+
+    .types h4 {
+        display: none;
+    }
+
+    button{
+
+        display: block;
+        position:absolute;
+        top:15%;
+        left:10%
+
+    }
+    .stats-name {
+        width: 45%;
+        float: left;
+        padding: 1.5rem 0;
+    }
+    .wrapper {
+        width: 55%;
+        float: left;
+    }
+    .name {
+        display: block;
+        position: absolute;
+        top: 5%;
+        left: 10%;
+    }
+    .id {
+        display: block;
+        position: absolute;
+        top: 8%;
+        right: 10%;
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .val {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 475px) {
+    .pokemon-img {
+        top: 65%;
+    }
+    button{
+        top:12%
     }
 }

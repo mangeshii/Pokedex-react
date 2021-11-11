@@ -1,11 +1,14 @@
-const PokeButons = ({name}) => {
+const PokeButons = ({ name }) => {
+    console.log(name)
     if (name === "grass") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#78c860",
                     padding: ".2rem 1rem",
+                    margin: "0rem .2rem",
                     color: "white",
                     borderRadius: "10px",
                 }}
@@ -16,6 +19,7 @@ const PokeButons = ({name}) => {
     } else if (name === "poison") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#a040a0",
@@ -28,10 +32,10 @@ const PokeButons = ({name}) => {
                 Poison
             </button>
         );
-    }
-    else if (name === "fire") {
+    } else if (name === "fire") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#f08030",
@@ -44,10 +48,10 @@ const PokeButons = ({name}) => {
                 Fire
             </button>
         );
-    }
-    else if (name === "water") {
+    } else if (name === "water") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#6890f0",
@@ -60,10 +64,10 @@ const PokeButons = ({name}) => {
                 Water
             </button>
         );
-    }
-    else if (name === "bug") {
+    } else if (name === "bug") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#a8b820",
@@ -76,10 +80,10 @@ const PokeButons = ({name}) => {
                 Bug
             </button>
         );
-    }
-    else if (name === "normal") {
+    } else if (name === "normal") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#a8a878",
@@ -92,10 +96,10 @@ const PokeButons = ({name}) => {
                 Normal
             </button>
         );
-    }
-    else if (name === "electric") {
+    } else if (name === "electric") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#f8d030",
@@ -108,10 +112,10 @@ const PokeButons = ({name}) => {
                 Electric
             </button>
         );
-    }
-    else if (name === "ground") {
+    } else if (name === "ground") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#e0c068",
@@ -124,10 +128,10 @@ const PokeButons = ({name}) => {
                 Ground
             </button>
         );
-    }
-    else if (name === "fairy") {
+    } else if (name === "fairy") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#ee99ac",
@@ -140,10 +144,10 @@ const PokeButons = ({name}) => {
                 Fairy
             </button>
         );
-    }
-    else if (name === "fighting") {
+    } else if (name === "fighting") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#c03028",
@@ -156,10 +160,10 @@ const PokeButons = ({name}) => {
                 Fighting
             </button>
         );
-    }
-    else if (name === "psychic") {
+    } else if (name === "psychic") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#f85888",
@@ -172,10 +176,10 @@ const PokeButons = ({name}) => {
                 Psychic
             </button>
         );
-    }
-    else if (name === "rock") {
+    } else if (name === "rock") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#b8a038",
@@ -188,10 +192,10 @@ const PokeButons = ({name}) => {
                 Rock
             </button>
         );
-    }
-    else if (name === "ghost") {
+    } else if (name === "ghost") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#705898",
@@ -204,10 +208,10 @@ const PokeButons = ({name}) => {
                 Ghost
             </button>
         );
-    }
-    else if (name === "ice") {
+    } else if (name === "ice") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#98d8d8",
@@ -223,6 +227,7 @@ const PokeButons = ({name}) => {
     } else if (name === "dragon") {
         return (
             <button
+                className="type"
                 style={{
                     border: "none",
                     backgroundColor: "#7038f8",

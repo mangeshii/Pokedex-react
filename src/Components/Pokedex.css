@@ -12,27 +12,38 @@
     flex-direction: column;
     background-color: #f2f3f4;
 }
-.name-cont {
+.name-container {
     width: 100%;
     background-color: white;
     padding: 0;
     margin: 0;
     height: fit-content;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
 }
-.name,
-.id {
+.poke-name,
+.poke-id {
     margin: 0;
     padding: 0;
 }
 
-.btn{
-    border:2px solid red;
-    width:100%;
+.btn {
+    border: 2px solid red;
+    width: 100%;
     margin-bottom: 4rem;
 }
-.load-more{
-    border:none;
-    height:3rem;
-    width:10rem;
+.load-more {
+    border: none;
+    height: 3rem;
+    width: 10rem;
     border-radius: 10px;
+}
+.link{
+    text-decoration: none;
+    color: black;
+}
+.link:hover{
+    text-decoration: none;
+    color: black;
 }

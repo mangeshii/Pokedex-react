@@ -35,3 +35,13 @@ code {
     font-size: 80%;
     }
 }
+@media only screen and (max-width:900px){
+    html{
+        font-size: 100%;
+    }
+}
+@media only screen and (max-width:475px){
+    html{
+        font-size: 70%;
+    }
+}

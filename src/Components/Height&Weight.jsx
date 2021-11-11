@@ -12,7 +12,7 @@ const HeighAndWeight = ({
             </div>
             <div className="weight">
                 <h4>Weight</h4>
-                <h5>{` ${poke_weight_lbs}lbs (${poke_weight_kg}kg )`}</h5>
+                <h5 className="value">{` ${poke_weight_lbs}lbs (${poke_weight_kg}kg )`}</h5>
             </div>
         </>
     );
