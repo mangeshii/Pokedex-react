@@ -8,7 +8,6 @@ const Pokedex = () => {
     const [loadMore, setLoadMore] = useState(
         "https://pokeapi.co/api/v2/pokemon?limit=12"
     );
-    console.log(pokemonData);
 
     const fetchApi = async () => {
         try {
@@ -51,6 +50,7 @@ const Pokedex = () => {
                                         .front_default
                                 }
                                 key={index}
+
                             />
                         );
                     })}
