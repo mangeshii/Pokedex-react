@@ -1,5 +1,4 @@
 .pokemon-container {
-    border: 2px solid red;
     height: 100vh;
     margin: 0;
     padding: 0;
@@ -8,17 +7,85 @@
 }
 
 .cont {
-    border: 2px solid blueviolet;
     display: flex;
-    height:80vh
 }
-.pokemon-img{
-    height: 10rem;
+.pokemon-img {
+    height: 16rem;
 }
-.image-cont{
-    border:2px solid red;
+.image-cont {
     display: inline-block;
+    padding: 7rem 5rem;
 }
-.nameandid{
-    display:flex
+.nameandid {
+    display: flex;
+}
+.name {
+    margin-right: 3rem;
+    font-weight: 600;
+    font-size: 3.5rem;
+}
+.id {
+    font-weight: 300;
+}
+.poke-details-container {
+    padding: 4rem;
+    width: 60%;
+}
+.height,
+.weight,
+.type,
+.ability {
+    height: 50%;
+}
+.height h4,
+.weight h4,
+.type h4,
+.ability h4 {
+    margin: 0;
+    font-weight: 400;
+}
+.weight h4 {
+    margin: 0;
+}
+.rows {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 3rem 0;
+}
+.height-weight,
+.type-ability {
+    width: 50%;
+    height: 100%;
+}
+.progress {
+    margin: 2rem;
+}
+.progess-bar-wrapper {
+    width: 65%;
+}
+
+.wrapper {
+    display: flex;
+    padding: 2rem 5rem;
+}
+.stats-name{
+    /* border:2px solid rgb(161, 157, 157); */
+    padding: 0.8rem 0;
+    width:35%
+}
+.stats-name h4 {
+    margin: 0;
+    padding: 0.6rem 0;
+}
+.value{
+    display: flex;
+}
+.names{
+    /* border:2px solid red; */
+    width:85%
+}
+.val{
+    /* border:2px solid blue */
+
 }
