@@ -43,7 +43,6 @@
     font-weight: 400;
     color:#708090;
     margin-bottom: .5rem;;
-    /* border:2px solid red */
 }
 .rows {
     height: 100%;
@@ -65,7 +64,7 @@
     margin: 2rem;
 }
 .progess-bar-wrapper {
-    width: 65%;
+    width: 70%;
 }
 
 .wrapper {
@@ -74,7 +73,7 @@
 }
 .stats-name{
     padding: 0.8rem 0;
-    width:35%
+    width:25%
 }
 .stats-name h4 {
     margin: 0;
@@ -84,5 +83,16 @@
     display: flex;
 }
 .names{
-    width:85%
+    width:85%;
+    color:#708090;
+    font-weight: 400;
+}
+.val{
+    font-weight: 500;
+}
+
+h5{
+
+    float: left;
+    margin-right: 0.8rem !important;
 }
