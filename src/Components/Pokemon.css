@@ -18,20 +18,22 @@
 }
 .nameandid {
     display: flex;
+    align-items: flex-end;
 }
 .name {
     margin-right: 3rem;
     font-weight: 600;
     font-size: 3.5rem;
-
 }
 .id {
     font-weight: 300;
+    font-size: 3rem;
 }
 .poke-details-container {
     padding: 4rem;
     width: 60%;
 }
+
 .height,
 .weight,
 .type,
@@ -41,8 +43,8 @@
 .rows h4 {
     margin: 0;
     font-weight: 400;
-    color:#708090;
-    margin-bottom: .5rem;;
+    color: #708090;
+    margin-bottom: 0.5rem;
 }
 .rows {
     height: 100%;
@@ -50,10 +52,10 @@
     display: flex;
     padding: 3rem 0;
 }
-.rows h5{
-    color:#576d7a;
+.rows h5 {
+    color: #576d7a;
     font-weight: 300;
-    margin:0
+    margin: 0;
 }
 .height-weight,
 .type-ability {
@@ -63,36 +65,60 @@
 .progress {
     margin: 2rem;
 }
-.progess-bar-wrapper {
+.wrapper {
     width: 70%;
 }
 
-.wrapper {
+.progress-bar-wrapper {
     display: flex;
-    padding: 2rem 5rem;
+    padding: 2rem 0rem 2rem 6rem;
 }
-.stats-name{
+.stats-name {
     padding: 0.8rem 0;
-    width:25%
+    width: 25%;
 }
 .stats-name h4 {
     margin: 0;
     padding: 0.6rem 0;
 }
-.value{
+.value {
     display: flex;
 }
-.names{
-    width:85%;
-    color:#708090;
+.names {
+    width: 85%;
+    color: #708090;
     font-weight: 400;
 }
-.val{
+.val {
     font-weight: 500;
 }
 
-h5{
-
+h5 {
     float: left;
     margin-right: 0.8rem !important;
+}
+.tabs {
+    display: none;
+}
+@media only screen and (max-width: 900px) {
+    .cont {
+        flex-direction: column;
+    }
+    .image-cont {
+        border: 2px solid red;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .wrapper {
+        display: none;
+    }
+    .poke-details-container {
+        border: 2px solid blueviolet;
+        width: 100%;
+    }
+    .tabs {
+        display: block;
+    }
 }

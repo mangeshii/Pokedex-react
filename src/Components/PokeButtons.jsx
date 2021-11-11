@@ -1,5 +1,5 @@
-const PokeButons = ({typee}) => {
-    if (typee === "grass") {
+const PokeButons = ({name}) => {
+    if (name === "grass") {
         return (
             <button
                 style={{
@@ -13,7 +13,7 @@ const PokeButons = ({typee}) => {
                 Grass
             </button>
         );
-    } else if (typee === "poison") {
+    } else if (name === "poison") {
         return (
             <button
                 style={{
@@ -29,7 +29,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "fire") {
+    else if (name === "fire") {
         return (
             <button
                 style={{
@@ -45,7 +45,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "water") {
+    else if (name === "water") {
         return (
             <button
                 style={{
@@ -61,7 +61,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "bug") {
+    else if (name === "bug") {
         return (
             <button
                 style={{
@@ -77,7 +77,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "normal") {
+    else if (name === "normal") {
         return (
             <button
                 style={{
@@ -93,7 +93,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "electric") {
+    else if (name === "electric") {
         return (
             <button
                 style={{
@@ -109,7 +109,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "ground") {
+    else if (name === "ground") {
         return (
             <button
                 style={{
@@ -125,7 +125,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "fairy") {
+    else if (name === "fairy") {
         return (
             <button
                 style={{
@@ -141,7 +141,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "fighting") {
+    else if (name === "fighting") {
         return (
             <button
                 style={{
@@ -157,7 +157,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "psychic") {
+    else if (name === "psychic") {
         return (
             <button
                 style={{
@@ -173,7 +173,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "rock") {
+    else if (name === "rock") {
         return (
             <button
                 style={{
@@ -189,7 +189,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "ghost") {
+    else if (name === "ghost") {
         return (
             <button
                 style={{
@@ -205,7 +205,7 @@ const PokeButons = ({typee}) => {
             </button>
         );
     }
-    else if (typee === "ice") {
+    else if (name === "ice") {
         return (
             <button
                 style={{
@@ -220,7 +220,7 @@ const PokeButons = ({typee}) => {
                 Ice
             </button>
         );
-    } else if (typee === "dragon") {
+    } else if (name === "dragon") {
         return (
             <button
                 style={{

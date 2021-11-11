@@ -13,14 +13,25 @@ code {
 }
 
 .App {
-    height: 100vh;
+    height: auto;
     width:100%
 }
 .main-container {
     max-width: 1400px;
     margin: auto;
     height:100%;
-    width:100vw
-    /* padding: 2rem; */
+    width:100vw;
 
+}
+@media only screen and (max-width:1200px){
+
+    html{
+    font-size: 90%;
+    }
+}
+@media only screen and (max-width:992px){
+
+    html{
+    font-size: 80%;
+    }
 }
