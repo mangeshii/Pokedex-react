@@ -1,5 +1,4 @@
 const Description = ({ speciesInfo }) => {
-    console.log(speciesInfo)
     return (
         <div className="description">
             {typeof speciesInfo.flavor_text_entries !== "undefined" ? (

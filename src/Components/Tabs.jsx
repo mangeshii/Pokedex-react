@@ -5,10 +5,12 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import HeighAndWeight from "./Height&Weight";
 import ProgressBar from "./ProgressBar";
-import TypeAndAbility from "./Type&Ability";
+import TypeAndAbility from "./Ability";
 import Description from "./Description";
 import NameAndId from "./NameAndId";
 import Breeding from "./Breeding";
+import Type from "./Type";
+import PokeImage from "./poke_Image";
 
 const Tabs = ({
     value,
@@ -25,10 +27,16 @@ const Tabs = ({
     pokemonInfo,
     egg_groups,
     gender_rate,
+    id
 }) => {
     return (
         <>
+            <div className="mob-poke-image">
+
+            <PokeImage id={id}/>
+            </div>
             <NameAndId name={name} pokemonInfo={pokemonInfo} />
+            <Type types={types} />
             <Description speciesInfo={speciesInfo} />
             <Box
                 className="tab-box"

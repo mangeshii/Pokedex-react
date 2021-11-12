@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import TypeAndAbility from "./Type&Ability";
+import Ability from "./Ability";
 import HeighAndWeight from "./Height&Weight";
 import ProgressBar from "./ProgressBar";
 import Tabs from "./Tabs";
@@ -8,13 +8,13 @@ import "./Pokemon.css";
 import Description from "./Description";
 import NameAndId from "./NameAndId";
 import Breeding from "./Breeding";
+import Type from "./Type"
+import PokeImage from "./poke_Image";
 
 const Pokemon = () => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
     const [speciesInfo, setSpeciesInfo] = useState([]);
     const [value, setValue] = useState("1");
-    // console.log(speciesInfo.flavor_text_entries[0].flavor_text)
-    // console.log(speciesInfo)
 
     // changing the tabs
     const handleChange = (event, newValue) => {
@@ -70,14 +70,11 @@ const Pokemon = () => {
 
     return (
         <>
+
             <div className="pokemon-container">
                 <div className="cont">
                     <div className="image-cont">
-                        <img
-                            className="pokemon-img img-fluid"
-                            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${id}.svg`}
-                            alt="pokemon"
-                        />
+                        <PokeImage id={id}/>
                     </div>
 
                     <div className="tabs">
@@ -96,6 +93,7 @@ const Pokemon = () => {
                             pokemonInfo={pokemonInfo}
                             egg_groups={egg_groups}
                             gender_rate={gender_rate}
+                            id={id}
                         />
                     </div>
 
@@ -113,7 +111,8 @@ const Pokemon = () => {
                                 />
                             </div>
                             <div className="type-ability">
-                                <TypeAndAbility
+                            <Type types={types}/>
+                                <Ability
                                     types={types}
                                     abilities={abilities}
                                 />

@@ -1,9 +1,9 @@
 import PokeButons from "./PokeButtons";
 
-const TypeAndAbility = ({ types, abilities }) => {
+const Ability = ({ types, abilities }) => {
     return (
         <>
-            <div className="types">
+            {/* <div className="types">
                 <h5 className="prop_name">Type</h5>
                 {typeof types !== "undefined" ? (
                     types.map((info) => {
@@ -19,7 +19,7 @@ const TypeAndAbility = ({ types, abilities }) => {
                 ) : (
                     <p>failed</p>
                 )}
-            </div>
+            </div> */}
             <div className="ability">
                 <h5 className="prop_name">Ability</h5>
 
@@ -41,4 +41,4 @@ const TypeAndAbility = ({ types, abilities }) => {
     );
 };
 
-export default TypeAndAbility;
+export default Ability;
