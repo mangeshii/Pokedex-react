@@ -7,6 +7,7 @@ import Tabs from "./Tabs";
 import "./Pokemon.css";
 import Description from "./Description";
 import NameAndId from "./NameAndId";
+import Breeding from "./Breeding";
 
 const Pokemon = () => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
@@ -56,6 +57,7 @@ const Pokemon = () => {
 
     // destructuring
     const { name, height, weight, types, abilities, stats } = pokemonInfo;
+    const { egg_groups, gender_rate } = speciesInfo;
 
     //covert decimeter to feet and meter
     const poke_height_ft = (height * 0.328083).toFixed(1);
@@ -90,7 +92,10 @@ const Pokemon = () => {
                             types={types}
                             abilities={abilities}
                             speciesInfo={speciesInfo}
-                            name={name} pokemonInfo={pokemonInfo}
+                            name={name}
+                            pokemonInfo={pokemonInfo}
+                            egg_groups={egg_groups}
+                            gender_rate={gender_rate}
                         />
                     </div>
 
@@ -115,6 +120,13 @@ const Pokemon = () => {
                             </div>
                             <div className="description-cont">
                                 <Description speciesInfo={speciesInfo} />
+                            </div>
+                            <div className="breeding-container">
+                                <Breeding
+                                    speciesInfo={speciesInfo}
+                                    egg_groups={egg_groups}
+                                    gender_rate={gender_rate}
+                                />
                             </div>
                         </div>
                     </div>

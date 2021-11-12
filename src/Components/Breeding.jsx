@@ -1,0 +1,31 @@
+const Breeding = ({ speciesInfo, egg_groups, gender_rate }) => {
+    return (
+        <>
+            <h3 className="breeding-heading">Breeding</h3>
+            <div className="capture_rate">
+                <h5>Capture Rate</h5>
+                <h5 className="value">
+                    {((speciesInfo.capture_rate / 255) * 100).toFixed(0) + "%"}
+                </h5>
+            </div>
+            <div className="egg_group">
+                <h5>Egg Group</h5>
+
+                {typeof egg_groups !== "undefined" ? (
+                    egg_groups.map((info) => {
+                        const { name } = info;
+                        return <h5  className="value">{name}</h5>;
+                    })
+                ) : (
+                    <p>failed</p>
+                )}
+            </div>
+            <div className="gender">
+                <h5>Gender</h5>
+                <h5  className="value">{12.5 * gender_rate + "%"} </h5>
+                <h5  className="value">{12.5 * (8 - gender_rate) + "%"}</h5>
+            </div>
+        </>
+    );
+};
+export default Breeding;

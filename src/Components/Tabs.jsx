@@ -8,6 +8,7 @@ import ProgressBar from "./ProgressBar";
 import TypeAndAbility from "./Type&Ability";
 import Description from "./Description";
 import NameAndId from "./NameAndId";
+import Breeding from "./Breeding";
 
 const Tabs = ({
     value,
@@ -22,6 +23,8 @@ const Tabs = ({
     speciesInfo,
     name,
     pokemonInfo,
+    egg_groups,
+    gender_rate,
 }) => {
     return (
         <>
@@ -54,6 +57,11 @@ const Tabs = ({
                             poke_weight_lbs={poke_weight_lbs}
                         />
                         <TypeAndAbility types={types} abilities={abilities} />
+                        <Breeding
+                            speciesInfo={speciesInfo}
+                            egg_groups={egg_groups}
+                            gender_rate={gender_rate}
+                        />
                     </TabPanel>
                     <TabPanel value="2">
                         <ProgressBar stats={stats} />

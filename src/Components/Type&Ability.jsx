@@ -4,7 +4,7 @@ const TypeAndAbility = ({ types, abilities }) => {
     return (
         <>
             <div className="types">
-                <h4>Type</h4>
+                <h5>Type</h5>
                 {typeof types !== "undefined" ? (
                     types.map((info) => {
                         const { type } = info;
@@ -21,7 +21,7 @@ const TypeAndAbility = ({ types, abilities }) => {
                 )}
             </div>
             <div className="ability">
-                <h4>Ability</h4>
+                <h5>Ability</h5>
 
                 {typeof abilities !== "undefined" ? (
                     abilities.map((info) => {

@@ -36,8 +36,10 @@
 .types,
 .ability {
     height: 50%;
+    display: flex;
+    flex-direction: column;
 }
-.rows h4 {
+.rows h5 {
     margin: 0;
     font-weight: 400;
     color: #708090;
@@ -90,15 +92,19 @@
     font-weight: 500;
 }
 
-h5,
+.lists,
 .poke-buttons-wrapper {
     float: left;
     margin-right: 0.5rem !important;
 }
+
 .tabs {
     display: none;
 }
 .description-cont {
+    display: none;
+}
+.breeding-container {
     display: none;
 }
 @media only screen and (max-width: 900px) {
@@ -156,7 +162,7 @@ h5,
         margin-top: 3.5rem;
     }
 
-    .types h4 {
+    .types h5 {
         display: none;
     }
 
@@ -167,7 +173,8 @@ h5,
         width: 100%;
         left: 0;
         display: flex;
-        justify-content: center;
+        justify-content: center !important;
+        align-items: center;
     }
     .type {
         border-radius: 50px !important;
@@ -189,6 +196,36 @@ h5,
     .description h5 {
         width: 60%;
     }
+    .types,
+    .ability,
+    .height,
+    .weight,
+    .capture_rate,
+    .egg_group,
+    .gender {
+        display: flex;
+    }
+    .types h5,
+    .ability h5,
+    .height h5,
+    .weight h5,
+    .capture_rate h5,
+    .egg_group h5,
+    .gender h5 {
+        width: 30%;
+        margin-top: 0.3rem;
+        color: #576d7a;
+    }
+    .value {
+        margin-top: 0.4rem;
+    }
+    .breeding-container {
+        display: block;
+    }
+    .breeding-heading {
+        margin: 1.5rem 0;
+        font-weight: 600;
+    }
 }
 
 @media only screen and (max-width: 550px) {
@@ -206,7 +243,7 @@ h5,
         width: 80%;
     }
     .types {
-        top: 40%;
+        top: 39.5%;
     }
 }
 @media only screen and (max-width: 360px) {
