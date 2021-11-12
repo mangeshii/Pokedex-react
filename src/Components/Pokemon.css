@@ -2,7 +2,6 @@
     height: 100vh;
     margin: 0;
     padding: 0;
-    background-color: beige;
     width: 100%;
 }
 
@@ -114,7 +113,14 @@
 .back-btn {
     display: none;
 }
-
+.type {
+    padding: 0.9rem 2rem;
+}
+@media only screen and (min-width: 901px) {
+    .image-cont {
+        background-color: transparent !important;
+    }
+}
 @media only screen and (max-width: 900px) {
     .image-cont .pokemon-img {
         display: none;

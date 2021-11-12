@@ -34,7 +34,7 @@ const Pokedex = () => {
 
     useEffect(() => {
         fetchApi();
-    }, []);
+    },[]);  // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>

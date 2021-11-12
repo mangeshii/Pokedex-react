@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Pokedex from "./Components/Pokedex";
 import Pokemon from "./Components/Pokemon";
 
+
 function App() {
     return (
         <div className="App">

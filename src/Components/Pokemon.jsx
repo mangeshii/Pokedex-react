@@ -8,7 +8,7 @@ import "./Pokemon.css";
 import Description from "./Description";
 import NameAndId from "./NameAndId";
 import Breeding from "./Breeding";
-import Type from "./Type"
+import Type from "./Type";
 import PokeImage from "./poke_Image";
 import BackButton from "./BackButton";
 
@@ -27,8 +27,10 @@ const Pokemon = () => {
     const { id } = pokemonid;
     const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}/`;
 
+
     // pokemon species url
     const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}/`;
+
 
     // Fetching the data from Api
     const PokemonDetails = async () => {
@@ -54,7 +56,7 @@ const Pokemon = () => {
     useEffect(() => {
         PokemonSpeciesDetails();
         PokemonDetails();
-    }, [id]);
+    }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
 
     // destructuring
     const { name, height, weight, types, abilities, stats } = pokemonInfo;
@@ -69,18 +71,19 @@ const Pokemon = () => {
     const poke_weight_kg = (weight / 10).toFixed(0);
     const poke_weight_lbs = (weight * 0.22046).toFixed(1);
 
+
     return (
         <>
-
             <div className="pokemon-container">
-
                 <div className="cont">
-                    <div className="image-cont">
-                    <div className="back-btn">
+                    <div
+                        className="image-cont"
 
-                    <BackButton/>
-                    </div>
-                        <PokeImage id={id}/>
+                    >
+                        <div className="back-btn">
+                            <BackButton />
+                        </div>
+                        <PokeImage id={id} />
                     </div>
 
                     <div className="tabs">
@@ -117,11 +120,9 @@ const Pokemon = () => {
                                 />
                             </div>
                             <div className="type-ability">
-                            <Type types={types}/>
-                                <Ability
-                                    types={types}
-                                    abilities={abilities}
-                                />
+                                <Type types={types} />
+
+                                <Ability types={types} abilities={abilities} />
                             </div>
                             <div className="description-cont">
                                 <Description speciesInfo={speciesInfo} />

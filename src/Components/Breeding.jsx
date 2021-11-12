@@ -1,5 +1,7 @@
-import female from "../Images/femenine.png"
-import male from "../Images/male.png"
+import female from "../Images/femenine.png";
+import male from "../Images/male.png";
+import { CircularProgress } from "@mui/material";
+
 const Breeding = ({ speciesInfo, egg_groups, gender_rate }) => {
     return (
         <>
@@ -14,22 +16,27 @@ const Breeding = ({ speciesInfo, egg_groups, gender_rate }) => {
                 <h5 className="prop_name">Egg Grp</h5>
 
                 {typeof egg_groups !== "undefined" ? (
-                    egg_groups.map((info) => {
+                    egg_groups.map((info,index) => {
                         const { name } = info;
-                        return <h5  className="value">{name}</h5>;
+                        return <h5 className="value" key={index}>{name}</h5>;
                     })
                 ) : (
-                    <p>failed</p>
+                    <p><CircularProgress/></p>
                 )}
             </div>
             <div className="gender">
                 <h5 className="prop_name">Gender</h5>
-                <h5  className="value">
-                <img className="img-fluid" src={female} alt="female" style={{height:'1.5rem'}}/>
-                {12.5 * gender_rate + "%"}
-                 </h5>
-                 <img src={male} alt="male" style={{height:'1.5rem'}}/>
-                <h5  className="value">{12.5 * (8 - gender_rate) + "%"}</h5>
+                <h5 className="value">
+                    <img
+                        className="img-fluid"
+                        src={female}
+                        alt="female"
+                        style={{ height: "1.5rem" }}
+                    />
+                    {12.5 * gender_rate + "%"}
+                </h5>
+                <img src={male} alt="male" style={{ height: "1.5rem" }} />
+                <h5 className="value">{12.5 * (8 - gender_rate) + "%"}</h5>
             </div>
         </>
     );

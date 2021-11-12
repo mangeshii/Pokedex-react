@@ -1,16 +1,19 @@
+
+import { CircularProgress } from "@mui/material";
+
 const ProgressBar = ({ stats }) => {
     return (
         <>
             <div className="stats-name">
                 {typeof stats !== "undefined" ? (
                     <>
-                        {stats.map((info) => {
+                        {stats.map((info,index) => {
                             const { base_stat } = info;
                             const { stat } = info;
                             const { name } = stat;
                             return (
                                 <>
-                                    <div className="values">
+                                    <div className="values" key={index}>
                                         <h4 className="names">{name}</h4>
                                         <h4 className="val">{base_stat}</h4>
                                     </div>
@@ -19,7 +22,7 @@ const ProgressBar = ({ stats }) => {
                         })}
                     </>
                 ) : (
-                    <></>
+                    <><CircularProgress/></>
                 )}
             </div>
 
@@ -103,7 +106,7 @@ const ProgressBar = ({ stats }) => {
                     </div>
                 </>
             ) : (
-                <p></p>
+                <p><CircularProgress/></p>
             )}
         </>
     );
