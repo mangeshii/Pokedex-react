@@ -10,6 +10,7 @@ import NameAndId from "./NameAndId";
 import Breeding from "./Breeding";
 import Type from "./Type"
 import PokeImage from "./poke_Image";
+import BackButton from "./BackButton";
 
 const Pokemon = () => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
@@ -72,8 +73,13 @@ const Pokemon = () => {
         <>
 
             <div className="pokemon-container">
+
                 <div className="cont">
                     <div className="image-cont">
+                    <div className="back-btn">
+
+                    <BackButton/>
+                    </div>
                         <PokeImage id={id}/>
                     </div>
 

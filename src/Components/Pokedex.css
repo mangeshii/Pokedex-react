@@ -1,3 +1,11 @@
+.pokedex {
+    text-align: center;
+    margin-top: 2rem;
+    background: -webkit-linear-gradient(rgb(231, 84, 84), rgb(184, 44, 44));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
+}
 .containers {
     margin: 2rem 0;
 }
@@ -11,6 +19,7 @@
     align-items: center;
     flex-direction: column;
     background-color: #f2f3f4;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 .name-container {
     width: 100%;
@@ -29,21 +38,49 @@
 }
 
 .btn {
-    border: 2px solid red;
     width: 100%;
-    margin-bottom: 4rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
-.load-more {
-    border: none;
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+.link:hover {
+    text-decoration: none;
+    color: black;
+}
+.btn-grad {
+    background-image: linear-gradient(
+        to right,
+        #e52d27 0%,
+        #b31217 51%,
+        #e52d27 100%
+    );
+}
+.btn-grad {
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
     height: 3rem;
     width: 10rem;
-    border-radius: 10px;
+    margin: auto;
+    border: none;
+    margin-bottom: 2rem;
 }
-.link{
+
+.btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
     text-decoration: none;
-    color: black;
-}
-.link:hover{
-    text-decoration: none;
-    color: black;
 }

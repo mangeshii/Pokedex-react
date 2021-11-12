@@ -27,13 +27,12 @@ const Tabs = ({
     pokemonInfo,
     egg_groups,
     gender_rate,
-    id
+    id,
 }) => {
     return (
         <>
             <div className="mob-poke-image">
-
-            <PokeImage id={id}/>
+                <PokeImage id={id} />
             </div>
             <NameAndId name={name} pokemonInfo={pokemonInfo} />
             <Type types={types} />

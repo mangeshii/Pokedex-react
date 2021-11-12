@@ -6,7 +6,7 @@ const ThumbNail = ({ id, name, image }) => {
         <>
             <Link className="link" to={`/pokemon/${id}`}>
                 <div className="col">
-                    <div className="cols border">
+                    <div className="cols ">
                         <img
                             className="thumbnail img-fluid mb-4 mt-4"
                             src={image}

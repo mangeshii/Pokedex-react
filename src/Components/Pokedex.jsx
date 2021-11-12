@@ -38,8 +38,9 @@ const Pokedex = () => {
 
     return (
         <>
+            <h1 className="pokedex">POKEDEX</h1>
             <div className="containers">
-                <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-3 ">
+                <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-4 ">
                     {pokemonData.map((pokemon, index) => {
                         return (
                             <ThumbNail
@@ -50,15 +51,17 @@ const Pokedex = () => {
                                         .front_default
                                 }
                                 key={index}
-
                             />
                         );
                     })}
                 </div>
             </div>
             <div className="btn">
-                <button className="load-more" onClick={() => fetchApi()}>
-                    Load More
+                <button
+                    className="load-more btn-grad "
+                    onClick={() => fetchApi()}
+                >
+                    Load
                 </button>
             </div>
         </>

@@ -21,6 +21,7 @@
     margin-right: 3rem;
     font-weight: 600;
     font-size: 3.5rem;
+    text-transform: capitalize;
 }
 .id {
     font-weight: 300;
@@ -107,6 +108,13 @@
 .breeding-container {
     display: none;
 }
+.prop_name {
+    margin-bottom: 0.5rem !important;
+}
+.back-btn {
+    display: none;
+}
+
 @media only screen and (max-width: 900px) {
     .image-cont .pokemon-img {
         display: none;
@@ -226,6 +234,9 @@
     .breeding-heading {
         margin: 1.5rem 0;
         font-weight: 600;
+    }
+    .back-btn {
+        display: block;
     }
 }
 
