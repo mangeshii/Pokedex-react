@@ -90,11 +90,15 @@
     font-weight: 500;
 }
 
-h5 {
+h5,
+.poke-buttons-wrapper {
     float: left;
-    margin-right: 0.8rem !important;
+    margin-right: 0.5rem !important;
 }
 .tabs {
+    display: none;
+}
+.description-cont {
     display: none;
 }
 @media only screen and (max-width: 900px) {
@@ -104,7 +108,6 @@ h5 {
     .cont {
         flex-direction: column;
     }
-
     .progress-bar-wrapper {
         display: none;
     }
@@ -119,10 +122,11 @@ h5 {
         height: 100%;
     }
     .tab-box {
-        padding: 7rem 0;
+        margin: 3rem 0;
+        order: 2;
     }
     .image-cont {
-        height: 50vh;
+        height: 30vh;
         width: 100%;
         padding: 0;
         background-color: beige;
@@ -130,42 +134,7 @@ h5 {
         display: inline-block;
     }
     .pokemon-img {
-        width: 100%;
-        position: relative;
-        top: 55%;
-        z-index: 1;
-        margin: auto;
-        height: 15rem;
-    }
-    .height,
-    .weight,
-    .ability {
-        display: flex;
-    }
-    .height h4,
-    .weight h4,
-    .ability h4 {
-        margin: 1rem;
-        width: 15%;
-        color: #708090;
-        font-weight: 500 !important;
-    }
-
-    .value {
-        margin: 1.4rem;
-    }
-
-    .types h4 {
         display: none;
-    }
-
-    button{
-
-        display: block;
-        position:absolute;
-        top:15%;
-        left:10%
-
     }
     .stats-name {
         width: 45%;
@@ -176,18 +145,49 @@ h5 {
         width: 55%;
         float: left;
     }
+    .nameandid .name {
+        display: none;
+    }
     .name {
-        display: block;
+        width: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        font-weight: 500;
+        margin-top: 3.5rem;
+    }
+
+    .types h4 {
+        display: none;
+    }
+
+    .types {
         position: absolute;
-        top: 5%;
-        left: 10%;
+        top: 41%;
+        height: auto;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: center;
+    }
+    .type {
+        border-radius: 50px !important;
+        padding: 0.4rem 2.5rem !important;
     }
     .id {
+        display: none;
+    }
+    .description-cont {
         display: block;
-        position: absolute;
-        top: 8%;
-        right: 10%;
-        font-size: 1.5rem;
+    }
+    .description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5rem;
+    }
+    .description h5 {
+        width: 60%;
     }
 }
 
@@ -199,9 +199,18 @@ h5 {
 
 @media only screen and (max-width: 475px) {
     .pokemon-img {
-        top: 65%;
+        top: 50%;
     }
-    button{
-        top:12%
+
+    .description h5 {
+        width: 80%;
+    }
+    .types {
+        top: 40%;
+    }
+}
+@media only screen and (max-width: 360px) {
+    .types {
+        top: 43%;
     }
 }

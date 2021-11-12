@@ -6,6 +6,8 @@ import TabPanel from "@mui/lab/TabPanel";
 import HeighAndWeight from "./Height&Weight";
 import ProgressBar from "./ProgressBar";
 import TypeAndAbility from "./Type&Ability";
+import Description from "./Description";
+import NameAndId from "./NameAndId";
 
 const Tabs = ({
     value,
@@ -17,9 +19,14 @@ const Tabs = ({
     stats,
     types,
     abilities,
+    speciesInfo,
+    name,
+    pokemonInfo,
 }) => {
     return (
         <>
+            <NameAndId name={name} pokemonInfo={pokemonInfo} />
+            <Description speciesInfo={speciesInfo} />
             <Box
                 className="tab-box"
                 sx={{ width: "100%", typography: "body1" }}

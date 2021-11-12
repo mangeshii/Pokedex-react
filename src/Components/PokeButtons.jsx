@@ -1,7 +1,8 @@
 const PokeButons = ({ name }) => {
-    console.log(name)
     if (name === "grass") {
         return (
+
+
             <button
                 className="type"
                 style={{
@@ -240,6 +241,23 @@ const PokeButons = ({ name }) => {
                 Dragon
             </button>
         );
+    }
+    else{
+        return(
+            <button
+                className="type"
+                style={{
+                    border: "none",
+                    backgroundColor: "#7038f8",
+                    padding: ".2rem 1rem",
+                    color: "white",
+                    margin: "0rem .2rem",
+                    borderRadius: "10px",
+                }}
+            >
+                {name}
+            </button>
+        )
     }
 };
 

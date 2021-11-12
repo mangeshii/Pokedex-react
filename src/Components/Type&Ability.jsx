@@ -10,15 +10,18 @@ const TypeAndAbility = ({ types, abilities }) => {
                         const { type } = info;
                         const { name } = type;
 
-                        return <PokeButons name={name}/>;
+                        return (
+                            <div className="poke-buttons-wrapper">
+                                <PokeButons name={name} />
+                            </div>
+                        );
                     })
                 ) : (
                     <p>failed</p>
                 )}
             </div>
             <div className="ability">
-                    <h4>Ability</h4>
-
+                <h4>Ability</h4>
 
                 {typeof abilities !== "undefined" ? (
                     abilities.map((info) => {

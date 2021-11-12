@@ -5,10 +5,15 @@ import HeighAndWeight from "./Height&Weight";
 import ProgressBar from "./ProgressBar";
 import Tabs from "./Tabs";
 import "./Pokemon.css";
+import Description from "./Description";
+import NameAndId from "./NameAndId";
 
 const Pokemon = () => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
+    const [speciesInfo, setSpeciesInfo] = useState([]);
     const [value, setValue] = useState("1");
+    // console.log(speciesInfo.flavor_text_entries[0].flavor_text)
+    // console.log(speciesInfo)
 
     // changing the tabs
     const handleChange = (event, newValue) => {
@@ -19,6 +24,9 @@ const Pokemon = () => {
     const pokemonid = useParams();
     const { id } = pokemonid;
     const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${id}/`;
+
+    // pokemon species url
+    const pokemonSpeciesUrl = `https://pokeapi.co/api/v2/pokemon-species/${id}/`;
 
     // Fetching the data from Api
     const PokemonDetails = async () => {
@@ -31,7 +39,18 @@ const Pokemon = () => {
         }
     };
 
+    const PokemonSpeciesDetails = async () => {
+        try {
+            const species_response = await fetch(pokemonSpeciesUrl);
+            const species_data = await species_response.json();
+            setSpeciesInfo(species_data);
+        } catch (e) {
+            console.log(e);
+        }
+    };
+
     useEffect(() => {
+        PokemonSpeciesDetails();
         PokemonDetails();
     }, [id]);
 
@@ -70,13 +89,14 @@ const Pokemon = () => {
                             stats={stats}
                             types={types}
                             abilities={abilities}
+                            speciesInfo={speciesInfo}
+                            name={name} pokemonInfo={pokemonInfo}
                         />
                     </div>
 
                     <div className="poke-details-container">
                         <div className="nameandid">
-                            <h1 className="name">{`${name}`}</h1>
-                            <h1 className="id">{`#0${pokemonInfo.id}`}</h1>
+                            <NameAndId name={name} pokemonInfo={pokemonInfo} />
                         </div>
                         <div className="rows">
                             <div className="height-weight">
@@ -92,6 +112,9 @@ const Pokemon = () => {
                                     types={types}
                                     abilities={abilities}
                                 />
+                            </div>
+                            <div className="description-cont">
+                                <Description speciesInfo={speciesInfo} />
                             </div>
                         </div>
                     </div>
