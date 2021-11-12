@@ -203,12 +203,10 @@
     .capture_rate,
     .egg_group,
     .gender {
-        display: flex;
+        display: flex !important;
+        flex-direction: row;
     }
-    .types h5,
-    .ability h5,
-    .height h5,
-    .weight h5,
+    .prop_name,
     .capture_rate h5,
     .egg_group h5,
     .gender h5 {
@@ -245,9 +243,14 @@
     .types {
         top: 39.5%;
     }
+    .stats-name {
+        width: 42%;
+        float: left;
+        padding: 1.5rem 0;
+    }
 }
 @media only screen and (max-width: 360px) {
     .types {
-        top: 43%;
+        top: 42%;
     }
 }

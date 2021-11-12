@@ -37,7 +37,7 @@ const ProgressBar = ({ stats }) => {
                                 aria-valuenow="25"
                                 aria-valuemin="0"
                                 aria-valuemax="100"
-                            ></div>
+                            >HP</div>
                         </div>
 
                         <div className="progress">
