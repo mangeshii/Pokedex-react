@@ -1,3 +1,15 @@
+:root {
+    --white-theme-background: #fff;
+    --dark-theme-background: #1c1c1c;
+    --dark-card-background: #000;
+}
+
+.dark-name {
+    color: #708090;
+    display: flex;
+    align-items: flex-end;
+}
+
 .pokemon-container {
     height: 100vh;
     margin: 0;
@@ -122,6 +134,9 @@
     }
 }
 @media only screen and (max-width: 900px) {
+    .form-check{
+        display: none;
+    }
     .image-cont .pokemon-img {
         display: none;
     }

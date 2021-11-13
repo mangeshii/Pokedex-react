@@ -12,7 +12,7 @@ import Type from "./Type";
 import PokeImage from "./poke_Image";
 import BackButton from "./BackButton";
 
-const Pokemon = () => {
+const Pokemon = ({darkMode}) => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
     const [speciesInfo, setSpeciesInfo] = useState([]);
     const [value, setValue] = useState("1");
@@ -162,7 +162,7 @@ const Pokemon = () => {
                     </div>
 
                     <div className="poke-details-container">
-                        <div className="nameandid">
+                        <div className={darkMode ? 'dark-name' : 'nameandid'}>
                             <NameAndId name={name} pokemonInfo={pokemonInfo} />
                         </div>
                         <div className="rows">
