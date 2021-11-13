@@ -15,7 +15,6 @@ const Pokedex = () => {
             const response = await fetch(
                 `https://pokeapi.co/api/v2/pokemon?limit=16&offset=${offset}`
             );
-            offset += 16;
             const data = await response.json();
             if (data.results.length < 16) {
                 setNoData(true);
@@ -24,17 +23,18 @@ const Pokedex = () => {
                 result.forEach(async (pokemon) => {
                     const response = await fetch(
                         `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-                    );
-                    const data = await response.json();
-                    setPokemonData((currentList) => [...currentList, data]);
-                });
+                        );
+                        const data = await response.json();
+                        setPokemonData((currentList) => [...currentList, data]);
+                    });
 
-            };
-            createPokemonObject(data.results);
+                };
+                createPokemonObject(data.results);
+            offset += 16;
 
-        } catch (e) {
-            console.log(`error is ${e}`);
-        }
+            } catch (e) {
+                console.log(`error is ${e}`);
+            }
     };
 
 
