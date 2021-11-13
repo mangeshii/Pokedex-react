@@ -4,9 +4,12 @@
     --dark-card-background:#000;
 }
 .App {
-    height: 100vh;
+    height: auto;
     width: 100%;
     background-color: var(--white-theme-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .app-dark {
     background-color: var(--dark-theme-background);
@@ -32,23 +35,26 @@
     flex-direction: column;
 }
 .main-container {
-    max-width: 1400px;
+    max-width: 1400px !important;
     margin: auto;
     height: 100%;
     width: 100vw;
-    /* border:2px solid red */
 }
-
-.form-check{
-    /* border:2px solid rgb(100, 100, 107); */
+.header{
     display: flex;
-    justify-content:flex-end ;
-    align-items: flex-end;
+    margin-top: 2rem;
+}
+.pokedex{
+    width:90%
+}
+.form-check{
+    height:2rem;
+    margin-top:.5rem;
 
 }
+
 .pokedex {
     text-align: center;
-    /* padding-top: 2rem; */
     background: -webkit-linear-gradient(rgb(231, 84, 84), rgb(184, 44, 44));
     background-clip: text;
     -webkit-text-fill-color: transparent;

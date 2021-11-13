@@ -4,17 +4,13 @@
     --dark-card-background: #000;
 }
 
-.dark-name {
-    color: #708090;
-    display: flex;
-    align-items: flex-end;
-}
 
-.pokemon-container {
-    height: 100vh;
+.pokemon-wrapper {
     margin: 0;
     padding: 0;
-    width: 100%;
+    max-width:1400px;
+    height: 100vh;
+    margin: auto;
 }
 
 .cont {
@@ -134,9 +130,6 @@
     }
 }
 @media only screen and (max-width: 900px) {
-    .form-check{
-        display: none;
-    }
     .image-cont .pokemon-img {
         display: none;
     }

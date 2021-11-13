@@ -12,7 +12,7 @@ import Type from "./Type";
 import PokeImage from "./poke_Image";
 import BackButton from "./BackButton";
 
-const Pokemon = ({darkMode}) => {
+const Pokemon = ({ darkMode }) => {
     const [pokemonInfo, setPokemonInfo] = useState([]);
     const [speciesInfo, setSpeciesInfo] = useState([]);
     const [value, setValue] = useState("1");
@@ -69,7 +69,6 @@ const Pokemon = ({darkMode}) => {
     const poke_weight_kg = (weight / 10).toFixed(0);
     const poke_weight_lbs = (weight * 0.22046).toFixed(1);
 
-
     const SelectColor = (name) => {
         switch (name) {
             case "normal":
@@ -113,88 +112,97 @@ const Pokemon = ({darkMode}) => {
         }
     };
 
-
     const changeBackgroundColor = () => {
-        return (
-                typeof types !== "undefined" ? (
-                    types.map((info) => {
-                        const { type } = info;
-                        const { name } = type;
+        return typeof types !== "undefined" ? (
+            types.map((info) => {
+                const { type } = info;
+                const { name } = type;
 
-                        return name
-                    })
-                ) : (
-                    <p></p>
-                )
+                return name;
+            })
+        ) : (
+            <p></p>
         );
     };
-    const bg=changeBackgroundColor()
+    const bg = changeBackgroundColor();
 
     return (
         <>
-            <div className="pokemon-container" >
-                <div className="cont">
-                    <div className="image-cont" style={{backgroundColor: `${SelectColor(bg[0])}`}}>
-                        <div className="back-btn">
-                            <BackButton />
+            <div className="pokemon-wrapper">
+                <div className="pokemon-container">
+                    <div className="cont">
+                        <div
+                            className="image-cont"
+                            style={{ backgroundColor: `${SelectColor(bg[0])}` }}
+                        >
+                            <div className="back-btn">
+                                <BackButton />
+                            </div>
+                            <PokeImage id={id} />
                         </div>
-                        <PokeImage id={id} />
-                    </div>
 
-                    <div className="tabs">
-                        <Tabs
-                            value={value}
-                            handleChange={handleChange}
-                            new_poke_height={new_poke_height}
-                            poke_height_m={poke_height_m}
-                            poke_weight_kg={poke_weight_kg}
-                            poke_weight_lbs={poke_weight_lbs}
-                            stats={stats}
-                            types={types}
-                            abilities={abilities}
-                            speciesInfo={speciesInfo}
-                            name={name}
-                            pokemonInfo={pokemonInfo}
-                            egg_groups={egg_groups}
-                            gender_rate={gender_rate}
-                            id={id}
-                        />
-                    </div>
-
-                    <div className="poke-details-container">
-                        <div className={darkMode ? 'dark-name' : 'nameandid'}>
-                            <NameAndId name={name} pokemonInfo={pokemonInfo} />
+                        <div className="tabs">
+                            <Tabs
+                                value={value}
+                                handleChange={handleChange}
+                                new_poke_height={new_poke_height}
+                                poke_height_m={poke_height_m}
+                                poke_weight_kg={poke_weight_kg}
+                                poke_weight_lbs={poke_weight_lbs}
+                                stats={stats}
+                                types={types}
+                                abilities={abilities}
+                                speciesInfo={speciesInfo}
+                                name={name}
+                                pokemonInfo={pokemonInfo}
+                                egg_groups={egg_groups}
+                                gender_rate={gender_rate}
+                                id={id}
+                            />
                         </div>
-                        <div className="rows">
-                            <div className="height-weight">
-                                <HeighAndWeight
-                                    new_poke_height={new_poke_height}
-                                    poke_height_m={poke_height_m}
-                                    poke_weight_kg={poke_weight_kg}
-                                    poke_weight_lbs={poke_weight_lbs}
+
+                        <div className="poke-details-container">
+                            <div
+                                className="nameandid"
+                            >
+                                <NameAndId
+                                    name={name}
+                                    pokemonInfo={pokemonInfo}
                                 />
                             </div>
-                            <div className="type-ability">
-                                <Type types={types} />
+                            <div className="rows">
+                                <div className="height-weight">
+                                    <HeighAndWeight
+                                        new_poke_height={new_poke_height}
+                                        poke_height_m={poke_height_m}
+                                        poke_weight_kg={poke_weight_kg}
+                                        poke_weight_lbs={poke_weight_lbs}
+                                    />
+                                </div>
+                                <div className="type-ability">
+                                    <Type types={types} />
 
-                                <Ability types={types} abilities={abilities} />
-                            </div>
-                            <div className="description-cont">
-                                <Description speciesInfo={speciesInfo} />
-                            </div>
-                            <div className="breeding-container">
-                                <Breeding
-                                    speciesInfo={speciesInfo}
-                                    egg_groups={egg_groups}
-                                    gender_rate={gender_rate}
-                                />
+                                    <Ability
+                                        types={types}
+                                        abilities={abilities}
+                                    />
+                                </div>
+                                <div className="description-cont">
+                                    <Description speciesInfo={speciesInfo} />
+                                </div>
+                                <div className="breeding-container">
+                                    <Breeding
+                                        speciesInfo={speciesInfo}
+                                        egg_groups={egg_groups}
+                                        gender_rate={gender_rate}
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="progress-bar-wrapper">
-                    <ProgressBar stats={stats} />
+                    <div className="progress-bar-wrapper">
+                        <ProgressBar stats={stats} />
+                    </div>
                 </div>
             </div>
         </>

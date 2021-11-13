@@ -4,10 +4,11 @@ import { useEffect, useState } from "react";
 import ThumbNail from "./Pokemon-thumbnail";
 import { CircularProgress } from "@mui/material";
 
-const Pokedex = ({ darkMode }) => {
+const Pokedex = () => {
     let offset = 0;
     const [pokemonData, setPokemonData] = useState([]);
     const [noData, setNoData] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
     const fetchApi = async () => {
         try {
@@ -53,31 +54,51 @@ const Pokedex = ({ darkMode }) => {
 
     return (
         <>
-            <h1 className="pokedex">POKEDEX</h1>
-            <div className="containers">
-                <div className="row row-cols-2 row-cols-lg-4 g-2 g-lg-4 ">
-                    {pokemonData.map((pokemon, index) => {
-                        return (
-                            <ThumbNail
-                                id={pokemon.id}
-                                name={pokemon.name}
-                                image={
-                                    pokemon.sprites.other.dream_world
-                                        .front_default
-                                }
-                                key={index}
-                                darkMode={darkMode}
+            <div className={darkMode ? "App app-dark" : "App"}>
+                <div className="main-container">
+                    <div className="header">
+                        <h1 className="pokedex">POKEDEX</h1>
+                        <div className="form-check form-switch">
+                            <input
+                                className="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="flexSwitchCheckDefault"
+                                onChange={() => setDarkMode(!darkMode)}
                             />
-                        );
-                    })}
+                        </div>
+                    </div>
+                    <div className="containers" style={{padding:'1rem'}}>
+                        <div className="row row-cols-2 row-cols-lg-4 g-4 g-lg-4 ">
+                            {pokemonData.map((pokemon, index) => {
+                                return (
+                                    <ThumbNail
+                                        id={pokemon.id}
+                                        name={pokemon.name}
+                                        image={
+                                            pokemon.sprites.other.dream_world
+                                                .front_default
+                                        }
+                                        key={index}
+                                        darkMode={darkMode}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
             </div>
-            {noData ? (
-                <h3 style={{textAlign:'center',margin:'3rem'}}>Yay! you have reached the end of data</h3>
-            ) : (
-                <div className="circular-progress" style={{textAlign:'center',width:'100%'}}>
 
-                <CircularProgress />
+            {noData ? (
+                <h3 style={{ textAlign: "center", margin: "3rem" }}>
+                    Yay! you have reached the end of data
+                </h3>
+            ) : (
+                <div
+                    className="circular-progress"
+                    style={{ textAlign: "center", width: "100%" }}
+                >
+                    <CircularProgress />
                 </div>
             )}
         </>
