@@ -4,55 +4,56 @@ import { useEffect, useState } from "react";
 import ThumbNail from "./Pokemon-thumbnail";
 import { CircularProgress } from "@mui/material";
 
+const Page_Num=0;
 const Pokedex = () => {
-    let offset = 0;
     const [pokemonData, setPokemonData] = useState([]);
-    const [noData, setNoData] = useState(false);
     const [darkMode, setDarkMode] = useState(false);
+    let [page, setPage] = useState(Page_Num);
+    const [isLoading, setLoading] = useState(true);
 
-    const fetchApi = async () => {
+    const GetPokemonData = async () => {
         try {
+            setLoading(true);
             const response = await fetch(
-                `https://pokeapi.co/api/v2/pokemon?limit=16&offset=${offset}`
+                `https://pokeapi.co/api/v2/pokemon?limit=16&offset=${page}`
             );
             const data = await response.json();
-            if (data.results.length < 16) {
-                setNoData(true);
-            }
-            const createPokemonObject = (result) => {
-                result.forEach(async (pokemon) => {
-                    const response = await fetch(
-                        `https://pokeapi.co/api/v2/pokemon/${pokemon.name}`
-                        );
+            setLoading(false);
+
+            const createPokemonObject = async (result) => {
+                const arrOfPokemonData = await Promise.all(result);
+                for (let i = 0; i < arrOfPokemonData.length; i++) {
+                    try {
+                        const response = await fetch(arrOfPokemonData[i].url);
                         const data = await response.json();
                         setPokemonData((currentList) => [...currentList, data]);
-                    });
-
-                };
-                createPokemonObject(data.results);
-            offset += 16;
-
-            } catch (e) {
-                console.log(`error is ${e}`);
-            }
+                    } catch (e) {
+                        console.log(`error is ${e}`);
+                    }
+                }
+            };
+            createPokemonObject(data.results);
+        } catch (e) {
+            console.log(`error is ${e}`);
+        }
     };
 
+    const scrollToEnd = () => {
+        setPage(page += 16);
+    };
 
-    const handleScroll = (e) => {
+    window.onscroll = function () {
         if (
-            window.innerHeight + e.target.documentElement.scrollTop + 1 >=
-            e.target.documentElement.scrollHeight
+            window.innerHeight + document.documentElement.scrollTop ===
+            document.documentElement.offsetHeight
         ) {
-            if (!noData) {
-                fetchApi();
-            }
+            scrollToEnd();
         }
     };
 
     useEffect(() => {
-        fetchApi();
-        window.addEventListener("scroll", handleScroll);
-    }, []); // eslint-disable-line react-hooks/exhaustive-deps
+        GetPokemonData();
+    }, [page]); // eslint-disable-line react-hooks/exhaustive-deps
 
     return (
         <>
@@ -70,7 +71,8 @@ const Pokedex = () => {
                             />
                         </div>
                     </div>
-                    <div className="containers" style={{padding:'1rem'}}>
+                    <div className="containers" style={{ padding: "1rem" }}>
+                        {" "}
                         <div className="row row-cols-2 row-cols-lg-4 g-4 g-lg-4 ">
                             {pokemonData.map((pokemon, index) => {
                                 return (
@@ -90,19 +92,7 @@ const Pokedex = () => {
                     </div>
                 </div>
             </div>
-
-            {noData ? (
-                <h3 style={{ textAlign: "center", margin: "3rem" }}>
-                    Yay! you have reached the end of data
-                </h3>
-            ) : (
-                <div
-                    className="circular-progress"
-                    style={{ textAlign: "center", width: "100%" }}
-                >
-                    <CircularProgress />
-                </div>
-            )}
+            {isLoading ? <CircularProgress /> : " "}
         </>
     );
 };
