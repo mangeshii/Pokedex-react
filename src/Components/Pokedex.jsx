@@ -44,7 +44,7 @@ const Pokedex = () => {
 
     window.onscroll = function () {
         if (
-            (window.innerHeight)+ (document.documentElement.scrollTop + 1) >=
+            (window.innerHeight)+ (document.documentElement.scrollTop + 3) >=
             document.documentElement.offsetHeight
         ) {
             scrollToEnd();
